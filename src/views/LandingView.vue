@@ -15,26 +15,14 @@
           <button class="btn btn-secondary btn-outline">
             This Website's Source Code
           </button>
-          <router-link class="btn btn-primary btn-outline" to="/create">
+          <router-link
+            class="btn btn-primary btn-outline"
+            :to="{ name: 'upload' }"
+          >
             Create
           </router-link>
         </div>
       </div>
     </div>
-    <!-- <div class="flex flex-col items-center pt-5">
-      <div class="card bg-gradient-to-r from-base-300 to-base-100">
-        <div class="card-body">
-          <div
-            class="p-1 text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary"
-          >
-            Low Poly Maker
-          </div>
-        </div>
-      </div>
-      <p class="text-2xl font-medium text-base-100">
-        Create stunning low polygon images!
-      </p>
-      <p class="text-xl">Customize</p>
-    </div> -->
   </div>
 </template>

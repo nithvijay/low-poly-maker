@@ -62,60 +62,76 @@ console.log(route.name);
 </script>
 
 <template>
-  <div class="flex flex-col items-center m-5 card bg-base-200">
-    <div class="card-body">
-      <div class="flex">
-        <div>
-          <ul class="w-full steps steps-vertical md:steps-horizontal">
-            <router-link
-              class="step"
-              :class="
-                (route.name == 'upload' ||
-                  route.name == 'colors' ||
-                  route.name == 'poly' ||
-                  route.name == 'generate') &&
-                'step-primary'
-              "
-              to="/create/upload"
-            >
-              Upload Image
-            </router-link>
-            <router-link
-              class="step"
-              :class="
-                (route.name == 'colors' ||
-                  route.name == 'poly' ||
-                  route.name == 'generate') &&
-                'step-primary'
-              "
-              to="/create/colors"
-            >
-              Change Colors
-            </router-link>
-            <router-link
-              class="step"
-              :class="
-                (route.name == 'poly' || route.name == 'generate') &&
-                'step-primary'
-              "
-              to="/create/poly"
-            >
-              Adjust Poly
-            </router-link>
-            <router-link
-              class="step"
-              :class="route.name == 'generate' && 'step-primary'"
-              to="/create/generate"
-            >
-              Generate Image
-            </router-link>
-          </ul>
-        </div>
+  <!-- Largest -->
+  <div class="flex flex-col items-center gap-2 p-2">
+    <!-- Steps navigation -->
+    <div class="w-full max-w-4xl card">
+      <div class="flex card-body bg-base-100">
+        <ul class="steps steps-vertical md:steps-horizontal">
+          <router-link
+            class="step"
+            :class="
+              (route.name == 'upload' ||
+                route.name == 'colors' ||
+                route.name == 'poly' ||
+                route.name == 'generate') &&
+              'step-primary'
+            "
+            :to="{ name: 'upload' }"
+          >
+            Upload Image
+          </router-link>
+          <router-link
+            class="step"
+            :class="
+              (route.name == 'colors' ||
+                route.name == 'poly' ||
+                route.name == 'generate') &&
+              'step-primary'
+            "
+            :to="{ name: 'colors' }"
+          >
+            Change Colors
+          </router-link>
+          <router-link
+            class="step"
+            :class="
+              (route.name == 'poly' || route.name == 'generate') &&
+              'step-primary'
+            "
+            :to="{ name: 'poly' }"
+          >
+            Adjust Poly
+          </router-link>
+          <router-link
+            class="step"
+            :class="route.name == 'generate' && 'step-primary'"
+            :to="{ name: 'generate' }"
+          >
+            Generate Image
+          </router-link>
+        </ul>
       </div>
     </div>
-    <router-view></router-view>
+    <router-view v-slot="{ Component }">
+      <transition name="fade" mode="out-in">
+        <component :is="Component" />
+      </transition>
+    </router-view>
   </div>
 </template>
+
+<style>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>
 <!-- <div class="grid items-center w-1/4 grid-cols-2 gap-2 b">
       <div class="grid-span-1">
         <label for="Threshold">Threshold for Vertex</label>

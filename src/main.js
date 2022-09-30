@@ -8,6 +8,7 @@ import ChangeColors from "./components/ChangeColors.vue";
 import AdjustPoly from "./components/AdjustPoly.vue";
 import GenerateImage from "./components/GenerateImage.vue";
 import "./index.css";
+import { store } from "./store.js";
 
 const routes = [
   {
@@ -28,16 +29,31 @@ const routes = [
         path: "colors",
         component: ChangeColors,
         name: "colors",
+        beforeEnter: (to, from) => {
+          if (!store.isImageUploaded) {
+            return { name: "upload" };
+          }
+        },
       },
       {
         path: "poly",
         component: AdjustPoly,
         name: "poly",
+        beforeEnter: (to, from) => {
+          if (!store.isImageUploaded) {
+            return { name: "upload" };
+          }
+        },
       },
       {
         path: "generate",
         component: GenerateImage,
         name: "generate",
+        beforeEnter: (to, from) => {
+          if (!store.isImageUploaded) {
+            return { name: "upload" };
+          }
+        },
       },
     ],
   },
