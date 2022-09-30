@@ -1,6 +1,4 @@
 <template>
-  <!-- <router-link to="/">Landing</router-link> -->
-  <!-- <router-link to="/create">Create</router-link> -->
   <div>
     <router-view v-slot="{ Component }">
       <transition name="fade" mode="out-in">
@@ -12,10 +10,17 @@
 
 <style>
 #app {
-  font-family: Inter, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  @apply font-Inter;
 }
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  @apply bg-slate-700;
+}
+
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.2s ease;
