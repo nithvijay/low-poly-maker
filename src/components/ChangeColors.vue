@@ -18,7 +18,10 @@ onMounted(() => {
   image.src = store.image.src;
 });
 
+const listOfFilters = ref([]);
+
 function applyFilterToCanvas(filterName) {
+  listOfFilters.value.push(filterName);
   applyFilter(canvas, ctx, filterName);
 }
 </script>
@@ -27,18 +30,27 @@ function applyFilterToCanvas(filterName) {
   <div class="w-full max-w-7xl card">
     <div class="flex flex-col card-body bg-base-100">
       <div class="grid grid-cols-6">
+        <div class="col-span-6">
+          {{ listOfFilters }}
+        </div>
         <div class="col-span-6 md:col-span-2">
-          <div class="flex flex-wrap gap-2 overflow-y-auto">
-            <btn class="btn btn-primary" @click="applyFilterToCanvas('sepia')"
-              >Sepia</btn
+          <div class="flex flex-wrap gap-2">
+            <button
+              class="btn btn-primary"
+              @click="applyFilterToCanvas('sepia')"
             >
-            <div class="btn btn-primary">Click</div>
-            <div class="btn btn-primary">Click</div>
-            <div class="btn btn-primary">Click</div>
-            <div class="btn btn-primary">Click</div>
-            <div class="btn btn-primary">Click</div>
-            <div class="btn btn-primary">Click</div>
-            <div class="btn btn-primary">Click</div>
+              Sepia
+            </button>
+            <div class="dropdown">
+              <label tabindex="0" class="btn btn-primary">Add Filter</label>
+              <ul
+                tabindex="0"
+                class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                <li><a>Item 1</a></li>
+                <li><a>Item 2</a></li>
+              </ul>
+            </div>
           </div>
         </div>
         <div class="col-span-6 md:col-span-4">

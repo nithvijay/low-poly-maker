@@ -74,7 +74,7 @@ onMounted(() => {
         <div class="card bg-base-100">
           <div class="card-body">
             <div class="card bg-base-100">
-              <canvas class="max-h-screen" ref="canvas" />
+              <canvas class="w-full" ref="canvas" />
             </div>
           </div>
         </div>
