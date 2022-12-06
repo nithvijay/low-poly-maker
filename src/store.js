@@ -29,4 +29,7 @@ export const store = reactive({
   mutateFileName(fileName) {
     this.fileName = fileName;
   },
+
+  // ChangeColors
+  filtersApplied: [],
 });

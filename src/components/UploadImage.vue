@@ -25,7 +25,6 @@ function handleFileUpload(event) {
 function removeFile() {
   store.mutateIsImageUploaded(false);
   store.mutateImage(null);
-  console.log(store.image.src);
 }
 
 onMounted(() => {
