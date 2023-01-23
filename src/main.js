@@ -4,7 +4,7 @@ import App from "./App.vue";
 import CreateView from "./views/CreateView.vue";
 import LandingView from "./views/LandingView.vue";
 import UploadImage from "./components/UploadImage.vue";
-import ChangeColors from "./components/ChangeColors.vue";
+// import ChangeColors from "./components/ChangeColors.vue";
 import AdjustPoly from "./components/AdjustPoly.vue";
 import GenerateImage from "./components/GenerateImage.vue";
 import "./index.css";
@@ -25,16 +25,16 @@ const routes = [
         component: UploadImage,
         name: "upload",
       },
-      {
-        path: "colors",
-        component: ChangeColors,
-        name: "colors",
-        beforeEnter: (to, from) => {
-          if (!store.isImageUploaded) {
-            return { name: "upload" };
-          }
-        },
-      },
+      // {
+      //   path: "colors",
+      //   component: ChangeColors,
+      //   name: "colors",
+      //   beforeEnter: (to, from) => {
+      //     if (!store.isImageUploaded) {
+      //       return { name: "upload" };
+      //     }
+      //   },
+      // },
       {
         path: "poly",
         component: AdjustPoly,

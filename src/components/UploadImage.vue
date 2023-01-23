@@ -15,6 +15,7 @@ function handleFileUpload(event) {
     canvas.value.width = image.width;
     canvas.value.height = image.height;
     ctx.value.drawImage(image, 0, 0);
+    console.log(store.isImageUploaded);
   };
   const imageURL = URL.createObjectURL(file.value.files[0]);
   store.mutateFileName(file.value.files[0].name);
@@ -28,6 +29,7 @@ function removeFile() {
 }
 
 onMounted(() => {
+  // everytime this page is loaded the image needs to be loaded from the source
   if (store.image.src) {
     const image = new Image();
 
@@ -64,7 +66,8 @@ onMounted(() => {
               <div class="btn btn-secondary" @click="removeFile">
                 Remove Image
               </div>
-              <router-link class="btn btn-primary" :to="{ name: 'colors' }">
+              <router-link class="btn btn-primary" :to="{ name: 'poly' }">
+                <!-- change color in the future -->
                 Next Step
               </router-link>
             </div>

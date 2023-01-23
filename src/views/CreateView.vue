@@ -1,3 +1,5 @@
+<!-- contains all the components -->
+
 <script setup>
 import { onMounted, ref } from "vue";
 import { filterImage, prewittHorizontal } from "lena.js";
@@ -72,7 +74,7 @@ console.log(route.name);
             class="step"
             :class="
               (route.name == 'upload' ||
-                route.name == 'colors' ||
+                // route.name == 'colors' ||
                 route.name == 'poly' ||
                 route.name == 'generate') &&
               'step-primary'
@@ -81,7 +83,7 @@ console.log(route.name);
           >
             Upload Image
           </router-link>
-          <router-link
+          <!-- <router-link
             class="step"
             :class="
               (route.name == 'colors' ||
@@ -92,7 +94,7 @@ console.log(route.name);
             :to="{ name: 'colors' }"
           >
             Change Colors
-          </router-link>
+          </router-link> -->
           <router-link
             class="step"
             :class="

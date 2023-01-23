@@ -8,6 +8,7 @@ export const store = reactive({
   imageHeight: null,
   imageWidth: null,
   fileName: "",
+
   mutateImage(src) {
     const image = new Image();
     image.src = src;
@@ -29,7 +30,4 @@ export const store = reactive({
   mutateFileName(fileName) {
     this.fileName = fileName;
   },
-
-  // ChangeColors
-  filtersApplied: [],
 });
