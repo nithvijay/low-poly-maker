@@ -1,10 +1,18 @@
 # Low Poly Maker
 
 ## Things to Do
-  - [x] make preview window scroll for overflow, fit vertically
-  - [ ] fix filter template
-  - [ ] create list of applied
-  - [ ] ability to clear applied filters
-  - [ ] add more filters
-  - [ ] form on poly settings page
-  - [ ] generate image
+### Organization
+  - [ ] write readme
+  - [ ] write instructions
+  - [ ] add video instructions
+  - [ ] add detail on what `num_vertices` and `threshold` are
+
+### Features
+  - [ ] poly view - change form ui
+  - [ ] poly view - change form submission
+  - [ ] change preview scaling
+
+### Major Features
+  - [ ] change color sampling processing
+  - [ ] refine `threshold` variable
+  - [ ] edit page
