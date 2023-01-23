@@ -1,5 +1,3 @@
-<script setup></script>
-
 <template>
   <div
     class="w-screen h-screen hero bg-gradient-to-br from-primary to-secondary"
@@ -19,7 +17,7 @@
             class="btn btn-primary btn-outline"
             :to="{ name: 'upload' }"
           >
-            Create
+            Start
           </router-link>
         </div>
       </div>

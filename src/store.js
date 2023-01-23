@@ -7,8 +7,6 @@ export const store = reactive({
   image: new Image(),
   imageHeight: null,
   imageWidth: null,
-  fileName: "",
-
   mutateImage(src) {
     const image = new Image();
     image.src = src;
@@ -27,7 +25,17 @@ export const store = reactive({
   mutateImageHeight(height) {
     this.imageHeight = height;
   },
+  fileName: "",
   mutateFileName(fileName) {
     this.fileName = fileName;
+  },
+
+  threshold: null,
+  acceptedN: null,
+  mutateThreshold(threshold) {
+    this.threshold = threshold;
+  },
+  mutateAcceptedN(acceptedN) {
+    this.acceptedN = acceptedN;
   },
 });

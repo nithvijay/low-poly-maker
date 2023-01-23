@@ -92,7 +92,33 @@ export const getLowPoly = (canvas, ctx, threshold, acceptedN) => {
 export const downloadCanvas = (canvas, filename) => {
   const link = document.createElement("a");
   link.href = canvas.value.toDataURL();
-  link.download = `${filename}.png`;
+  link.download = `${filename.split(".")[0]}_low_poly.${
+    filename.split(".")[1]
+  }`;
   link.click();
   URL.revokeObjectURL(link.href);
 };
+
+function changeRed(canvas, ctx, value) {
+  // for future editing features
+  var pixels = ctx.value.getImageData(
+    0,
+    0,
+    canvas.value.width,
+    canvas.value.height
+  );
+
+  let args = [pixels, 0];
+  let newPixels = prewittHorizontal.apply(null, args);
+  let d = newPixels.data;
+
+  for (let i = 0; i < d.length; i += 4) {
+    d[i] = 255 - d[i];
+    // d[i + 1] = 0
+    // d[i + 2] = 0
+  }
+
+  ctx.value.putImageData(newPixels, 0, 0);
+
+  filterImage(canvas.value, prewittHorizontal, image.value);
+}

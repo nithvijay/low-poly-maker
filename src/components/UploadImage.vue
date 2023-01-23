@@ -15,7 +15,6 @@ function handleFileUpload(event) {
     canvas.value.width = image.width;
     canvas.value.height = image.height;
     ctx.value.drawImage(image, 0, 0);
-    console.log(store.isImageUploaded);
   };
   const imageURL = URL.createObjectURL(file.value.files[0]);
   store.mutateFileName(file.value.files[0].name);

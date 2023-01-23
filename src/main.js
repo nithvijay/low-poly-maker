@@ -14,6 +14,7 @@ const routes = [
   {
     path: "/",
     component: LandingView,
+    name: "landing",
   },
   {
     path: "/create",
