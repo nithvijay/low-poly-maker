@@ -10,9 +10,12 @@
           of customization options!
         </p>
         <div class="grid grid-cols-2 gap-2">
-          <button class="btn btn-secondary btn-outline">
+          <a
+            class="btn btn-secondary btn-outline"
+            href="https://github.com/nithvijay/low-poly-maker"
+          >
             This Website's Source Code
-          </button>
+          </a>
           <router-link
             class="btn btn-primary btn-outline"
             :to="{ name: 'upload' }"
