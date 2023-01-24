@@ -1,13 +1,16 @@
 # Low Poly Maker
 
 ## Things to Do
-### Organization
+### Before First Release
+  - [ ] add favico
   - [ ] write readme
   - [ ] write instructions
-  - [ ] add video instructions
   - [ ] add detail on what `num_vertices` and `threshold` are
+  - [ ] create release
 
 ### Features
+  - [ ] resize images
+  - [ ] reset image after poly
   - [ ] poly view - change form ui
   - [ ] poly view - change form submission
   - [ ] change preview scaling
