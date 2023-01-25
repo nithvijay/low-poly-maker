@@ -84,7 +84,7 @@ onMounted(() => {
         <div class="flex flex-col card-body bg-base-100">
           <div class="text-xl">
             Supported filetypes
-            <span class="font-mono">.jpg, .png</span>
+            <span class="font-mono">.jpg, .jpeg, .png</span>
           </div>
           <label class="btn btn-primary btn-block">
             <span> <i class="mr-2 fas fa-file-upload" /> Upload File </span>
