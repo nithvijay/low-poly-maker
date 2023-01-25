@@ -38,7 +38,7 @@ console.log(mountImgUrl);
         </div>
       </div>
     </div>
-    <div class="p-5 max-w-screen-2xl card bg-base-100">
+    <div class="p-5 card bg-base-100">
       <div class="grid grid-cols-2">
         <div class="col-span-2 px-5 pt-2 text-center lg:col-span-1">
           <span class="mb-2 badge">before</span>
