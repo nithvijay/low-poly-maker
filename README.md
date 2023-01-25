@@ -35,27 +35,12 @@ There is a four step process for converting an image into its low poly represent
 3. Draw Polygons
 4. Color in Shapes
 
-For edge detection, a variety of algorithms can be used. Essentially, an edge can be found in an image by seeing how much the pixel intensity changes from nearby pixels. If the nearby pixels are close in color, there is no edge. In this project [lena.js](https://github.com/davidsonfellipe/lena.js/) is used to apply a edge detection filter to the image. The result after this step is a greyscale image with mostly values of 0 where there are no edges, and higher values where there are edges.
+For edge detection, a variety of algorithms can be used. Essentially, an edge can be found in an image by seeing how much the pixel intensity changes from nearby pixels. If the nearby pixels are close in color, there is no edge. In this project [lena.js](https://github.com/davidsonfellipe/lena.js/) is used to apply an edge detection filter to the image. The result after this step is a grayscale image with mostly values of zero where there are no edges, and higher values where there are edges.
 
 With these edges, an accept-reject sampling algorithm is used to randomly select points on the image that correspond to the edges. The process is as follows:
 
 1. Randomly select points on the edge detected image 
-2. If the value of the point divided by a random amount exceeds the `threshold` (a variable), keep the point as a vertex
+2. If the value of the point divided by a random amount exceeds the `threshold`, keep the point as a vertex
 3. Repeat this process until there are `n` vertices
 
 After this process, there will be `n` vertices generally located at points where there are edges. Four vertices are manually placed at each corner as well. From this, triangles can be drawn connecting the vertices using a algorithm called [Delaunay triangulation](https://en.wikipedia.org/wiki/Delaunay_triangulation). This algorithm has a special property that states that within any circle made from the verticies of any triangle there are no other vertices. Essentially, this ensures the final result will not have triangles that stretch too far. This process is done in the code using [Delanuator](https://github.com/mapbox/delaunator). Once the polygons are created, they still need to be filled in with a color similar to the original image. Currently, the average color of the three vertices used to create the triangle are used.
-
-
-## Things to Do
-### Features
-  - [ ] resize images to fit on screen
-  - [ ] reset image after poly
-  - [ ] add loading to generate button
-  - [ ] poly view - change form ui
-  - [ ] poly view - change form submission
-
-### Major Features
-  - [ ] change color sampling process
-  - [ ] change polygons created near the edges of the image
-  - [ ] refine `threshold` variable
-  - [ ] create edit page
