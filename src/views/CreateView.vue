@@ -39,8 +39,7 @@ const route = useRoute();
             Upload Image
           </router-link>
           <div class="step" :class="route.name == 'poly' && 'step-primary'">
-            <span>Edit Image</span>
-            (Coming Soon)
+            <span class="text-slate-400">Edit Image (TBD)</span>
           </div>
           <router-link
             class="step"
