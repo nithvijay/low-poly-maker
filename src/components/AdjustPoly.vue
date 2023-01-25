@@ -44,6 +44,25 @@ function downloadHelper() {
 <template>
   <div class="flex flex-col items-center w-full gap-2">
     <div class="flex flex-col items-center w-full gap-2">
+      <div class="w-full max-w-4xl card">
+        <div class="card-body bg-base-100">
+          <p>
+            <span class="px-1 font-mono text-sm rounded bg-slate-200"
+              >threshold</span
+            >
+            takes values between 0.001 and 1,000. A high value means the
+            polygons will more strongly align to the original image's curves and
+            shape.
+          </p>
+          <p>
+            <span class="px-1 font-mono text-sm rounded bg-slate-200"
+              >num_vertices</span
+            >
+            takes values up to 20,000. A higher number here will result in more
+            polygons in the final image.
+          </p>
+        </div>
+      </div>
       <div class="w-full max-w-xl card">
         <div class="flex flex-col md:grid md:grid-cols-2 card-body bg-base-100">
           <input
