@@ -12,9 +12,15 @@ console.log(mountImgUrl);
     <div class="max-w-xl card bg-base-100">
       <div class="text-center card-body">
         <h1 class="text-2xl font-extrabold md:text-5xl">Low Poly Maker</h1>
-        <p class="py-6">
-          Convert your pictures into beautiful low polygon versions with dozens
-          (eventually) of customization options!
+        <p class="flex flex-col gap-2 py-4">
+          <span>
+            Convert your pictures into beautiful low polygon versions with
+            dozens of customization options (eventually).
+          </span>
+          <span class="text-xs italic text-slate-400">
+            No images are stored and all the work is done in your browser with
+            Javascript.
+          </span>
         </p>
         <div class="grid grid-cols-2 gap-2">
           <a
@@ -46,37 +52,3 @@ console.log(mountImgUrl);
     </div>
   </div>
 </template>
-
-<!-- <template>
-  <div
-    class="w-screen h-screen hero bg-gradient-to-br from-primary to-secondary"
-  >
-    <div class="text-center hero-content card card-body bg-base-100">
-      <div class="max-w-xl">
-        <h1 class="text-5xl font-extrabold">Low Poly Maker</h1>
-        <p class="py-6">
-          Convert your pictures into beautiful low polygon versions with dozens
-          of customization options!
-        </p>
-        <div class="grid grid-cols-2 gap-2">
-          <a
-            class="btn btn-secondary btn-outline"
-            href="https://github.com/nithvijay/low-poly-maker"
-          >
-            This Website's Source Code
-          </a>
-          <router-link
-            class="btn btn-primary btn-outline"
-            :to="{ name: 'upload' }"
-          >
-            Start
-          </router-link>
-        </div>
-      </div>
-      <div class="card"> -->
-<!-- <img :src="mountImgUrl" /> -->
-<!-- <img :src="mountLowImgUrl" /> -->
-<!-- </div>
-    </div>
-  </div>
-</template> -->

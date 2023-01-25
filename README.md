@@ -2,7 +2,7 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/0254534c-1518-41c3-89d6-500ee7e13426/deploy-status)](https://app.netlify.com/sites/low-poly-maker/deploys)
 
 
-Check out the website [here](https://low-poly-maker.netlify.app/)! This repository contains the code for the website, including the generation code. No images are stored anywhere and all the work is done in your browser with Javascript.
+Check out the website [here](https://low-poly-maker.netlify.app/)! This repository contains the code for the website, including the generation code. No images are stored and all the work is done in your browser with Javascript.
 
 Low Poly is a minimalistic art style that demphasizes finer details by representing features with polygons. The edges of the polygons serve as the detail in the image as the polygon itself is monocolor. Here is an example:
 
